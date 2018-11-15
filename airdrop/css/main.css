@@ -1,0 +1,642 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html,
+button,
+input,
+select,
+textarea {
+  color: #fff;
+}
+html {
+  font-size: 1em;
+  line-height: 1.4;
+}
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle;
+}
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  background: #999999 url(../img/bg.jpg);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  padding: 50px 15px;
+}
+.subscribe-form {
+  max-width: 550px;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid #A6C4C8;
+  -webkit-box-shadow: #e5e5e5  0px 0px 50px 0px inset, rgba(0,0,0,0.2) 0px 1px 5px 1px;
+  box-shadow: #e5e5e5  0px 0px 50px 0px inset, rgba(0,0,0,0.2) 0px 1px 5px 1px;
+  border-radius: 4px;
+  padding-top: 30px;
+  overflow: hidden;
+  position: relative;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.subscribe-form.show-me {
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.subscribe-form .form-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 800;
+  color: #306883;
+  padding: 0 30px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.subscribe-form .form-title.unsubscribe {
+  color: #E187;
+}
+.subscribe-form .form-content {
+  padding: 0px 30px;
+  padding-bottom: 15px;
+}
+.subscribe-form .form-message {
+  color: #306883;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  padding: 0 30px;
+  margin-bottom: 30px;
+}
+.subscribe-form .form-loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+.subscribe-form .form-loading i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  color: #999999;
+  font-size: 100px;
+}
+.subscribe-form hr {
+  height: 2px;
+  border: none;
+  margin: 20px 30px;
+  background-image: -webkit-radial-gradient(circle, #94b9be, #ffffff);
+  background-image: radial-gradient(circle, #94b9be, #ffffff);
+  background-repeat: no-repeat;
+}
+.subscribe-form .group {
+  *zoom: 1;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-bottom: 15px;
+}
+.subscribe-form .group:before,
+.subscribe-form .group:after {
+  content: " ";
+  display: table;
+}
+.subscribe-form .group:after {
+  clear: both;
+}
+.subscribe-form .group > label {
+  padding: 5px 15px 5px 15px;
+  color: #405C60;
+  font-size: 14px;
+  font-weight: 700;
+  display: block;
+}
+.subscribe-form .group > label.empty {
+  display: block;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+}
+.subscribe-form .group > div {
+  padding: 0 15px;
+}
+.subscribe-form .group > div.addon-right {
+  position: relative;
+  padding-right: 50px;
+}
+.subscribe-form .group > div.addon-right > i {
+  position: absolute;
+  right: 25px;
+  top: 9px;
+  z-index: 999;
+  color: #555555;
+}
+.subscribe-form .group > div .error-message {
+  font-size: 14px;
+  color: red;
+  padding: 5px;
+}
+.subscribe-form .group > div.input-prefix {
+  position: relative;
+}
+.subscribe-form .group > div.input-prefix i {
+  position: absolute;
+  left: 28px;
+  top: 12px;
+  color: #6A9FAB;
+}
+.subscribe-form .group > div.input-prefix input {
+  padding-left: 38px;
+}
+.subscribe-form .group .btn-submit {
+  padding: 12px 34px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: #3d9db3;
+  border-color: #3d9db3;
+  border: 1px solid #1C6C7A;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: rgba(0,0,0,0.2) 0px 0px 15px 0px inset, rgba(255,255,255,0.9) 0px 0px 0px 3px, rgba(0,0,0,0.3) 0px 2px 8px 1px;
+  box-shadow: rgba(0,0,0,0.2) 0px 0px 15px 0px inset, rgba(255,255,255,0.9) 0px 0px 0px 3px, rgba(0,0,0,0.3) 0px 2px 8px 1px;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.subscribe-form .group .btn-submit:hover,
+.subscribe-form .group .btn-submit:focus,
+.subscribe-form .group .btn-submit:active,
+.subscribe-form .group .btn-submit.active,
+.open .dropdown-toggle.subscribe-form .group .btn-submit {
+  color: #ffffff;
+  background-color: #338295;
+  border-color: #2d7585;
+}
+.subscribe-form .group .btn-submit:active,
+.subscribe-form .group .btn-submit.active,
+.open .dropdown-toggle.subscribe-form .group .btn-submit {
+  background-image: none;
+}
+.subscribe-form .group .btn-submit.disabled,
+.subscribe-form .group .btn-submit[disabled],
+fieldset[disabled] .subscribe-form .group .btn-submit,
+.subscribe-form .group .btn-submit.disabled:hover,
+.subscribe-form .group .btn-submit[disabled]:hover,
+fieldset[disabled] .subscribe-form .group .btn-submit:hover,
+.subscribe-form .group .btn-submit.disabled:focus,
+.subscribe-form .group .btn-submit[disabled]:focus,
+fieldset[disabled] .subscribe-form .group .btn-submit:focus,
+.subscribe-form .group .btn-submit.disabled:active,
+.subscribe-form .group .btn-submit[disabled]:active,
+fieldset[disabled] .subscribe-form .group .btn-submit:active,
+.subscribe-form .group .btn-submit.disabled.active,
+.subscribe-form .group .btn-submit[disabled].active,
+fieldset[disabled] .subscribe-form .group .btn-submit.active {
+  background-color: #3d9db3;
+  border-color: #3d9db3;
+}
+.subscribe-form .group .btn-submit .badge {
+  color: #3d9db3;
+  background-color: #ffffff;
+}
+.subscribe-form .group .btn-submit:hover {
+  background-color: #49aac1;
+}
+.subscribe-form .group.group-submit {
+  margin-top: 30px;
+}
+.subscribe-form .form-footer {
+  height: 60px;
+  line-height: 60px;
+  border-top: 1px solid #DBE5E8;
+  background-image: -webkit-linear-gradient(135deg, #e1eaeb 25%, transparent 25%, transparent 50%, #e1eaeb 50%, #e1eaeb 75%, transparent 75%, transparent);
+  background-image: linear-gradient(135deg, #e1eaeb 25%, transparent 25%, transparent 50%, #e1eaeb 50%, #e1eaeb 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+  padding: 0 30px;
+  text-align: right;
+}
+.subscribe-form .form-footer .btn {
+  padding: 6px 10px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 3px;
+  color: #1da2ca;
+  background-color: #ffffff;
+  border-color: #cbd5d6;
+  border: 1px solid #CBD5D6;
+  font-weight: 700;
+  text-decoration: none;
+}
+.subscribe-form .form-footer .btn:hover,
+.subscribe-form .form-footer .btn:focus,
+.subscribe-form .form-footer .btn:active,
+.subscribe-form .form-footer .btn.active,
+.open .dropdown-toggle.subscribe-form .form-footer .btn {
+  color: #1da2ca;
+  background-color: #ebebeb;
+  border-color: #a9b9bb;
+}
+.subscribe-form .form-footer .btn:active,
+.subscribe-form .form-footer .btn.active,
+.open .dropdown-toggle.subscribe-form .form-footer .btn {
+  background-image: none;
+}
+.subscribe-form .form-footer .btn.disabled,
+.subscribe-form .form-footer .btn[disabled],
+fieldset[disabled] .subscribe-form .form-footer .btn,
+.subscribe-form .form-footer .btn.disabled:hover,
+.subscribe-form .form-footer .btn[disabled]:hover,
+fieldset[disabled] .subscribe-form .form-footer .btn:hover,
+.subscribe-form .form-footer .btn.disabled:focus,
+.subscribe-form .form-footer .btn[disabled]:focus,
+fieldset[disabled] .subscribe-form .form-footer .btn:focus,
+.subscribe-form .form-footer .btn.disabled:active,
+.subscribe-form .form-footer .btn[disabled]:active,
+fieldset[disabled] .subscribe-form .form-footer .btn:active,
+.subscribe-form .form-footer .btn.disabled.active,
+.subscribe-form .form-footer .btn[disabled].active,
+fieldset[disabled] .subscribe-form .form-footer .btn.active {
+  background-color: #ffffff;
+  border-color: #cbd5d6;
+}
+.subscribe-form .form-footer .btn .badge {
+  color: #ffffff;
+  background-color: #1da2ca;
+}
+.booking-form {
+  width: 320px;
+}
+@media (min-width: 550px) {
+  .booking-form {
+    width: 520px;
+  }
+  .booking-form .group > label {
+    float: left;
+    width: 180px;
+  }
+  .booking-form .group > div {
+    margin-left: 180px;
+    padding-left: 0;
+  }
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #B2B2B2;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.18);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.18);
+  -webkit-transition: border-color ease-in-out .15s, background ease-in-out .15s;
+  transition: border-color ease-in-out .15s, background ease-in-out .15s;
+  font-family: 'Open Sans', sans-serif;
+}
+.form-control:focus {
+  outline: none;
+  border-color: #999999;
+  background: #F4F3F4;
+}
+.form-control::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+  color: #999999;
+}
+.form-control::-webkit-input-placeholder {
+  color: #999999;
+}
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+  opacity: 1;
+}
+textarea.form-control {
+  height: auto;
+}
+input[type=checkbox] {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  position: absolute;
+}
+input[type=checkbox] + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  background: url('../img/checkbox.png') left -132px no-repeat;
+  color: #405C60;
+  font-size: 14px;
+}
+input[type=checkbox]:checked + label {
+  background-position: left 2px;
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.one-line {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.arrow-up {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-style: none;
+}
+.arrow-down {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-style: none;
+}
+.arrow-right {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-style: none;
+}
+.arrow-left {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-style: none;
+}
+.arrow {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  vertical-align: middle;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+}
+.arrow.up {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-style: none;
+}
+.arrow.down {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-style: none;
+}
+.arrow.right {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-style: none;
+}
+.arrow.left {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-style: none;
+}
+/*
+ * Image replacement
+ */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+}
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+.invisible {
+  visibility: hidden;
+}
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.clearfix:after {
+  clear: both;
+}
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+  *zoom: 1;
+}
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links for images, or javascript/internal links
+     */
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

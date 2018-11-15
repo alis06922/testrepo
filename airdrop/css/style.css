@@ -1,0 +1,193 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+#main {
+	min-height: 100vh;
+}
+
+body, h1 {
+	font-family: 'Open Sans', sans-serif;
+}
+
+a.link-accent {
+	color: #9DD7E1;
+}
+
+a.link-accent:hover {
+	color: #ACECF7;
+	text-decoration: none;
+}
+
+.hero-gradient-dark {
+    padding-bottom: 60px;
+    padding-top: 60px;
+    position: relative;
+    z-index: 3;
+    height: 100%;
+}
+
+.bg-custom {
+	background-color: #0D42B2;
+	background-image: url('../images/robot-3.png');
+	background-position: 7% 22%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.text-gray {
+	color: #444 !important;
+}
+
+.steps {
+	text-align: right;
+	font-size: 20px;
+	color: white;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.instructions {
+	font-size: 14px;
+	line-height: 2;
+
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.numberCircle {
+	background: #444;
+	display: inline-block;
+    width: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 20px;
+    border: 2px solid #444;
+}
+
+.divider { 
+  margin: 10px 0px;
+  height: 1px;
+  background: grey;
+}
+
+#submit-btn {
+	width: 200px;
+	border-radius: 20px;
+}
+
+.text-accent {
+	color: #6FB1FF !important;
+}
+
+.airdrop-logo {
+	height: 50px;
+}
+
+.step-container {
+	margin: 15px 0;
+}
+
+.btn-reddit {
+	color: #fff;
+    background-color: #ff4500;
+    border-color: #ff4500;
+}
+
+.btn-reddit:hover {
+	color: #fff;
+    background-color: #E83F00;
+    border-color: #E83F00;
+}
+
+.btn-medium {
+	color: #fff;
+    background-color: #00E468;
+    border-color: #00E468;
+}
+
+.btn-medium:hover {
+	color: #fff;
+    background-color: #00D05F;
+    border-color: #00D05F;
+}
+
+#telegram-error {
+	display: none;
+}
+
+.loading {
+	height: 25px;
+}
+
+.logout {
+	color: white;
+	text-decoration: underline
+}
+
+.diamond-card {
+	max-height: 150px;
+}
+
+.interest-container {
+	padding: 0px;
+}
+
+.terms-container {
+	margin-top: 50px;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 991px) {
+	.steps {
+		text-align: center;
+		font-size: 48px;
+		color: white;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.instructions {
+		font-size: 22px;
+
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	.airdrop-logo {
+		height: 100px;
+	}
+
+	.numberCircle {
+		background: #444;
+		display: inline-block;
+	    width: 50px;
+	    line-height: 50px;
+	    border-radius: 50%;
+	    text-align: center;
+	    font-size: 24px;
+	    border: 2px solid #444;
+	}
+
+	.divider { 
+	  margin: 10px 100px;
+	  height: 1px;
+	  background: grey;
+	}
+
+	.interest-container {
+		padding: 0 100px;
+	}
+}

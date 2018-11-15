@@ -1,0 +1,587 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+@import "variables.less";
+@import "mixins.less";
+//@import "styleSelect.less";
+//@import "dateTimePicker.less";
+* {
+  .box-sizing(border-box);
+}
+*:before,
+*:after {
+  .box-sizing(border-box);
+}
+body{
+    background: @gray-light url(../img/bg.jpg);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    padding: 50px 15px;
+}
+.subscribe-form{
+    max-width: 550px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid #A6C4C8;
+    .box-shadow(lighten(#bfbfbf, 15%)+~" 0px 0px 50px 0px inset, rgba(0,0,0,0.2) 0px 1px 5px 1px");
+    border-radius: 4px;
+    padding-top: 30px;
+    overflow: hidden;
+    position: relative;
+    .scale(0.5; 0.5);
+    .opacity(0);
+    .transition(all 500ms ease);
+    &.show-me{
+        .scale(1; 1);
+        .opacity(1);
+    }
+    .form-title{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 24px;
+        font-weight: 800;
+        color: #306883;
+        padding: 0 30px;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+        &.unsubscribe{
+            color: #E187;
+        }
+    }
+    .form-content{
+        padding: 0px 30px;
+        padding-bottom: 15px;
+    }
+    .form-message{
+        color: #306883;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+        padding: 0 30px;
+        margin-bottom: 30px;
+    }
+    .form-loading{
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 9;
+        i{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -50px;
+            margin-top: -50px;
+            color: @gray-light;
+            font-size: 100px;
+        }
+    }
+    hr{
+        height: 2px;
+        border: none;
+        margin: 20px 30px;
+        #gradient .radial(#94B9BE; white);
+    }
+    .group{
+        .clearfix();
+        margin-right: -15px;
+        margin-left: -15px;
+        margin-bottom: 15px;
+        > label{
+            padding: 5px 15px 5px 15px;
+            color: #405C60;
+            font-size: 14px;
+            font-weight: 700;
+            display: block;
+            &.empty{
+                display:block;
+                height:1px;
+                padding:0;
+                margin:0;
+            }
+        }
+        > div{
+            padding: 0 15px;
+            &.addon-right{
+                position:relative;
+                padding-right: 50px;
+                > i{
+                    position: absolute;
+                    right: 25px;
+                    top: 9px;
+                    z-index: 999;
+                    color: @gray;
+                }
+            }
+            .error-message{
+                font-size: 14px;
+                color: red;
+                padding: 5px;
+            }
+            &.input-prefix{
+                position: relative;
+                i{
+                    position: absolute;
+                    left: 28px;
+                    top: 12px;
+                    color: #6A9FAB;
+                }
+                input{
+                    padding-left: 38px;
+                }
+            }
+        }
+        .btn-submit{
+            .button-size(12px; 34px; 14px; 20px; 3px);
+            .button-variant(white; #3D9DB3; #3D9DB3);
+            border: 1px solid #1C6C7A;
+            text-transform: uppercase;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+            .box-shadow(~"rgba(0,0,0,0.2) 0px 0px 15px 0px inset, rgba(255,255,255,0.9) 0px 0px 0px 3px, rgba(0,0,0,0.3) 0px 2px 8px 1px");
+            .transition(all 300ms ease);
+            &:hover{
+                background-color: lighten(#3D9DB3, 5%);
+            }
+        }
+        &.group-submit{
+            margin-top: 30px;
+        }
+    }
+    .form-footer{
+        height: 60px;
+        line-height: 60px;
+        border-top: 1px solid #DBE5E8;
+        #gradient .striped(@color: #E1EAEB; @angle: 135deg);
+        background-size: 40px 40px;
+        padding: 0 30px;
+        text-align: right;
+        .btn{
+            .button-size(6px; 10px; 14px; 20px; 3px);
+            .button-variant(#1DA2CA; #fff; #CBD5D6);
+            border: 1px solid #CBD5D6;
+            font-weight: 700;
+            text-decoration: none;
+        }
+    }
+}
+
+// Responsive form
+.booking-form{
+    width: 320px;
+    @media (min-width: 550px) {
+        width: 520px;
+        .group{
+            > label{
+                float: left;
+                width: 180px;
+            }
+            > div{
+                margin-left: 180px;
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 40px; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  padding: @padding-base-vertical @padding-base-horizontal;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @input-color;
+  background-color: @input-bg;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid #B2B2B2;
+  border-radius: 3px;
+  .box-shadow(inset 0 1px 4px rgba(0,0,0,.18));
+  .transition(~"border-color ease-in-out .15s, background ease-in-out .15s");
+
+  // Customize the `:focus` state to imitate native WebKit styles.
+  //.form-control-focus();
+  &:focus{
+    outline: none;
+    border-color: darken(#B2B2B2, 10%);
+    background: #F4F3F4;
+  }
+
+  // Placeholder
+  .placeholder();
+
+  // Disabled and read-only inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    background-color: @input-bg-disabled;
+    opacity: 1; // iOS fix for unreadable disabled content
+  }
+
+  // Reset height for `textarea`s
+  textarea& {
+    height: auto;
+  }
+  font-family: 'Open Sans', sans-serif;
+}
+input[type=checkbox]{
+  .opacity(0);
+  position: absolute; // not test with //display: none;
+  & + label{
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    background: url('../img/checkbox.png') left -132px no-repeat;
+    color: #405C60;
+    font-size: 14px;
+  }
+  &:checked + label{
+    background-position: left 2px;
+  }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+
+.one-line{
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
+
+// Arrow
+.arrow-up{
+    border-left-color:transparent;
+    border-right-color:transparent;
+    border-top-style:none;
+}
+.arrow-down{
+    border-left-color:transparent;
+    border-right-color:transparent;
+    border-bottom-style:none;
+}
+.arrow-right{
+    border-top-color:transparent;
+    border-bottom-color:transparent;
+    border-right-style:none;
+}
+.arrow-left{
+    border-top-color:transparent;
+    border-bottom-color:transparent;
+    border-left-style:none;
+}
+.arrow{
+    width:0;
+    height:0;
+    display:inline-block;
+    vertical-align:middle;
+    border-color:white;
+    border-width:5px;
+    border-style:solid;
+    &.up{
+        .arrow-up;
+    }
+    &.down{
+        .arrow-down;
+    }
+    &.right{
+        .arrow-right;
+    }
+    &.left{
+        .arrow-left;
+    }
+}
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
